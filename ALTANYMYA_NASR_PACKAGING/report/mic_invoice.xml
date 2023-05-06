@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="ALTANYMYA_NASR_PACKAGING.nasr_report_mic_invoice_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page" dir="LTR"
+                             style="font-family: Courier New; font-size: 14pt; font-weight: bold; width:100%">
+                            <div class="line" style="border-top: 1px solid black; margin-top: 0px; padding-top: 0px;"/>
+                            <table class="table table-borderless" style="width:100%">
+                                <tr>
+                                    <td colspan="1">اسم العميل</td>
+                                    <td colspan="4">
+                                        <span t-field="o.partner_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1">عنوان العميل</td>
+                                    <td colspan="4">
+                                        <span t-field="o.partner_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1">Customer Name</td>
+                                    <td colspan="4">
+                                        <span t-field="o.partner_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1">Customer Address</td>
+                                    <td colspan="4">
+                                        <span t-field="o.partner_id.street2"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1">Customer VAT ID</td>
+                                    <td colspan="4">
+                                        <span t-field="o.partner_id.vat"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1">Invoice Issue Date</td>
+                                    <td colspan="4">
+                                        <span t-field="o.invoice_date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1">Invoice Number</td>
+                                    <td colspan="4">
+                                        <span t-field="o.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
