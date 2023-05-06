@@ -81,9 +81,10 @@ class ShiftProductionNasr(models.Model):
 
                 all_shifts = rec.env['shift.production'].search([('job_ticket', 'in', rec.job_ticket.ids)])
                 if rec.id == min(all_shifts).id:
-                    if rec.operation.id > min(res).id:
-                        raise ValidationError(
-                            _("The quantity done for this operation cannot exceed the job ticket quantity."))
+                    if res:
+                        if rec.operation.id > min(res).id:
+                            raise ValidationError(
+                                _("The quantity done for this operation cannot exceed the job ticket quantity."))
 
     @api.constrains('quantity_done')
     def check_quantity_done(self):
