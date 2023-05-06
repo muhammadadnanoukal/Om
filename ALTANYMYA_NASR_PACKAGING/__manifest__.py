@@ -4,7 +4,7 @@
     'version': '1.0',
     'sequence': -200,
     'category': 'Inventory/Purchase',
-    'depends': ['mrp', 'sale', 'mail', 'product'],
+    'depends': ['mrp', 'sale', 'mail', 'product', 'account', 'contacts', 'stock'],
     'data': [
         'security/ir.model.access.csv',
         'data/data.xml',
