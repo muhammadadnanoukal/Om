@@ -30,7 +30,7 @@ class ShiftProductionNasr(models.Model):
         res = super(ShiftProductionNasr, self).write(vals)
         return res
 
-    @api.onchange('edit_line')
+    @api.onchange('edit_line', 'job_ticket')
     def _get_operation_domains(self):
         if self.job_ticket:
             result = {}
