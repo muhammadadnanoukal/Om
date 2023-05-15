@@ -10,6 +10,11 @@
         'report/report_info.xml',
         'report/invoice_exceptional_report.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'ALTANMYA_Exceptional_Reports/static/src/css/font.css',
+        ],
+    },
     'license': 'LGPL-3',
     'installable': True,
     'application': True,
