@@ -17,6 +17,7 @@
         'views/shift_production_view.xml',
         'report/report_info.xml',
         'report/mic_pallet.xml',
+        'report/mic_invoice.xml',
         'report/mrp_production_report_template.xml',
         'report/standard_half_page_pallet_sticker.xml',
         'report/standard_small_page_pallet_sticker.xml',
