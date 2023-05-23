@@ -248,10 +248,9 @@
                                             </div>
                                         </th>
                                         <th style="width:30% ; height : 150px !important" rowspan="5">
-
-                                            <img style="margin-top : 20px"
-                                                 t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', o.l10n_sa_qr_code_str, 130, 130)"
-                                                 width="125" height="125"/>
+                                            <img t-if="o.l10n_sa_qr_code_str"
+                                                 t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', o.l10n_sa_qr_code_str, 400, 400)"
+                                                 alt="QR Code" style="margin-left : 20px; height:100px;"/>
                                         </th>
                                     </tr>
                                     <tr>
