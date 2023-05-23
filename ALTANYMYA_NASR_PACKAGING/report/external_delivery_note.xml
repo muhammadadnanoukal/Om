@@ -33,10 +33,10 @@
                                     <td colspan="1"
                                         style="font-weight: normal; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                         <t t-if="o.sale_order_id">
-                                            <div t-field="o.sale_order_id.partner_id.id"/>
+                                            <div t-field="o.sale_order_id.partner_id.company_new_field"/>
                                         </t>
                                         <t t-else=" ">
-                                            <div t-field="o.sale_id.id"/>
+                                            <div t-field="o.sale_id.partner_id.company_new_field"/>
                                         </t>
                                     </td>
                                 </tr>
