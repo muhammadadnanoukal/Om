@@ -123,12 +123,16 @@
                                             <span t-field="product.pallet"/>
                                         </td>
                                         <td style="border-bottom: 1px solid black; border-left: 1px solid black;">
-                                            No. of Carton/
-                                            <br/>
-                                            Pallet
+                                            <t t-if="product.pallet and product.No_of_carton">
+                                                <t t-set="carton" t-value="product.No_of_carton / product.pallet"/>
+                                                <t t-esc="carton"/>
+                                            </t>
                                         </td>
                                         <td style="border-bottom: 1px solid black; border-left: 1px solid black;">
-                                            No.<br/>Pcs./Carton
+                                            <t t-if="product.No_of_pcs and product.No_of_carton">
+                                                <t t-set="pcs" t-value="product.No_of_pcs / product.No_of_carton"/>
+                                                <t t-esc="pcs"/>
+                                            </t>
                                         </td>
                                         <td style="border-bottom: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;">
                                             <span t-field="product.qty_done"/>
