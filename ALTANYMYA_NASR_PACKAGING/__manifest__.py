@@ -21,6 +21,7 @@
         'report/mrp_production_report_template.xml',
         'report/standard_half_page_pallet_sticker.xml',
         'report/standard_small_page_pallet_sticker.xml',
+        'report/external_delivery_note.xml',
         'report/Order_Confirmation.xml',
         'report/nasrpack_layout.xml',
     ],
