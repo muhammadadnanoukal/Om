@@ -84,7 +84,7 @@ class ShiftProductionNasr(models.Model):
                     if res:
                         if rec.operation.id > min(res).id:
                             raise ValidationError(
-                                _("The quantity done for this operation cannot exceed the job ticket quantity."))
+                                _("There should be other operation/s before this operation."))
 
     @api.constrains('quantity_done')
     def check_quantity_done(self):
@@ -114,13 +114,17 @@ class ShiftProductionNasr(models.Model):
                         if curr_rec[0].operation.id > i[0].operation.id:
                             if sum(i.mapped('quantity_done')) < total_qty_done:
                                 raise ValidationError(
-                                    _("The quantity done for this operation cannot exceed the job ticket quantity."))
+                                    _("The quantity done for this operation cannot exceed the job ticket quantity nor previous operation/s if existed."))
 
                         if curr_rec[0].operation.id < i[0].operation.id:
                             if sum(i.mapped('quantity_done')) > total_qty_done:
                                 raise ValidationError(
-                                    _("The quantity done for this operation cannot exceed the job ticket quantity."))
+                                    _("The quantity done for this operation cannot exceed the job ticket quantity nor previous operation/s if existed."))
 
+            if rec.job_ticket:
+                if rec.quantity_done > rec.job_ticket.product_qty:
+                    raise ValidationError(
+                        _("The quantity done for this operation cannot exceed the job ticket quantity."))
     @api.model
     def create(self, vals):
         if vals.get('sequence', _('New')) == ('New'):
